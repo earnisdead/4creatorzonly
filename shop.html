@@ -1,0 +1,317 @@
+<!-- Desarrollo @jmanzbb -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta property="og:title" content="4creatorzonly">
+  <meta property="og:image" content="/favicon.png">
+  <meta property="og:description" content="4creatorzonly">
+
+  <title>4creatorzonly</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Aspekta';
+  src: url('/assets/Aspekta-150.woff2') format('woff2');
+  font-weight: 150;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Aspekta';
+  src: url('/assets/Aspekta-550.woff2') format('woff2');
+  font-weight: 550;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Aspekta';
+  src: url('/assets/Aspekta-650.woff2') format('woff2');
+  font-weight: 650;
+  font-style: normal;
+  font-display: swap;
+}
+body{
+    font-family: 'Aspekta';
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* IZQUIERDA */
+.leftside {
+  flex: 1;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+
+.scroll-gallery {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  height: 100%;
+}
+
+
+.scroll-gallery img {
+  flex: 0 0 100%;      
+  height: 100%;        
+  object-fit: cover;    
+
+}
+
+
+.scroll-gallery::-webkit-scrollbar { 
+      height: 3px;
+      background: none;
+ }
+ .scroll-gallery::-webkit-scrollbar-thumb { 
+      background-color: black;
+      border-radius: 0px;
+ }
+
+
+
+/* DERECHA */
+.right-container {
+  flex: 1;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-container-wrapper{
+width: 100%;
+max-width: 400px;
+margin: auto;
+}
+
+.title {
+    font-family: 'Aspekta';
+    font-weight: 650;
+  font-size: 2rem;
+  margin-bottom: 10px;
+
+}
+
+.price {
+        font-family: 'Aspekta';
+    font-weight: 550;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.divider {
+  height: 1px;
+  background: white;
+  margin: 20px 0;
+}
+
+.button {
+  display: block;           
+  padding: 16px;
+  width: 100%;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  text-align: center;          
+  text-decoration: none;      
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-family: 'Aspekta';
+  font-weight: 150;
+  font-size: 20px;
+  transition: 0.2s ease;      
+}
+
+.button:hover {
+  color: black;
+  background-color: white;
+}
+
+/* DESPLEGABLE */
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ font-size: 20px;
+ font-weight: 550;
+  width: 100%;          
+  cursor: pointer;
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+}
+
+
+.toggle::after {
+  content: "∨";
+  margin-left: 10px;    
+  flex-shrink: 0;       
+  transition: transform 0.8s ease;
+}
+
+
+.extra {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s ease;
+  font-size: 20px;
+}
+
+.extra.open {
+  max-height: 500px;
+  margin-top: 15px;
+}
+
+/* TABLA */
+table {
+font-size: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border: 1px solid white;
+}
+
+td, th {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: center;
+}
+td{
+    border-left: none;
+    border-right: none;
+}
+th{
+    font-weight: 150;
+}
+
+.enlace{
+    padding-top: 30px;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+   .right {
+    width: 100%;
+    min-height: 50vh;
+  }
+
+    .leftside {
+    height: 50vh; 
+    flex: none;
+  }
+
+  .scroll-gallery {
+    height: 100%;
+  }
+ 
+  .right-container-wrapper{
+    max-width: 90%;
+  }
+  
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- IZQUIERDA -->
+  <div class="leftside">
+  <div class="scroll-gallery">
+    <img src="assets/mockupmainstreamweb.png" alt="img1">
+    <img src="assets/mainstreamweb1.png" alt="img2">
+    <img src="assets/mainstreamweb2.png" alt="img3">
+    <img src="assets/mainstreamweb3.png" alt="img4">
+  </div>
+  </div>
+
+  <!-- DERECHA -->
+  <div class="right-container">
+    <div class="right-container-wrapper">
+    <div class="title">mainstream</div>
+    <div class="price">25€</div>
+
+    <div class="divider"></div>
+
+
+   <div class="toggle" onclick="toggleInfo()">
+  <span>descripción y guía de tallas</span>
+  
+</div>
+
+    <div class="extra" id="extraContent">
+      <p>100% algodón<br>
+    tejido de 220 g/m2<br>
+diseñp impreso en el pecho en DTF de calidad</p>
+
+      <table>
+        <tr>
+          <th>talla</th>
+          <td>xs</td>
+          <td>s</td>
+          <td>m</td>
+          <td>l</td>
+          <td>xl</td>
+        </tr>
+        <tr>
+          <th>pecho</th>
+          <td>54,5</td>
+          <td>57,5</td>
+          <td>61</td>
+          <td>64,5</td>
+          <td>68</td>
+        </tr>
+        <tr>
+            <th>largo</th>
+            <td>68</td>
+            <td>70</td>
+            <td>72</td>
+            <td>74</td>
+            <td>76</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="enlace"><a href="https://stripe.com" target="_blank" class="button">
+  comprar
+</a></div>
+</div>
+  </div>
+
+</div>
+
+<script>
+
+// Desplegar toggle
+function toggleInfo() {
+  document.getElementById("extraContent").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
